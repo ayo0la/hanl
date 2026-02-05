@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* HANL Color Palette - Deep Navy + Electric Cyan */
+  --color-hanl-900: #0a1628;
+  --color-hanl-800: #0f2140;
+  --color-hanl-700: #152d58;
+  --color-hanl-600: #1e3a6e;
+  --color-hanl-500: #2a4a8a;
+  --color-hanl-400: #3b5fa6;
+  --color-hanl-300: #5b7fc0;
+  --color-hanl-200: #8ba5d6;
+  --color-hanl-100: #c0d0ea;
+  --color-hanl-50: #e8eef7;
+
+  /* Accent - Electric Cyan */
+  --color-accent-600: #00a8cc;
+  --color-accent-500: #00d4ff;
+  --color-accent-400: #33ddff;
+  --color-accent-300: #66e6ff;
+  --color-accent-200: #99eeff;
+  --color-accent-100: #ccf7ff;
+
+  /* Gold - Nigerian Warmth */
+  --color-gold-500: #f5a623;
+  --color-gold-400: #f7b84e;
+  --color-gold-300: #f9ca79;
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.6s ease-out forwards;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-counter: counter 2s ease-out forwards;
+  --animate-bounce-slow: bounce-slow 3s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes counter {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #0a1628;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Grid pattern for dark sections */
+.bg-grid-pattern {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 212, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Dot pattern for hero */
+.bg-dot-pattern {
+  background-image: radial-gradient(
+    rgba(0, 212, 255, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
