@@ -4,7 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import Badge from "@/components/ui/Badge";
 import type { CourseCategory, CourseSubcategory, CourseTrack } from "@/types";
-import { ChevronDown, BookOpen } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface SubcategoryAccordionProps {
@@ -16,27 +16,47 @@ function SubcategoryAccordion({ subcategory, defaultOpen = false }: SubcategoryA
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="border border-slate-200 rounded-lg overflow-hidden">
+    <div className="border-b border-slate-200 last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={cn(
-          "w-full flex items-center justify-between px-4 py-3 text-sm font-semibold transition-colors cursor-pointer",
-          isOpen ? "bg-hanl-50 text-hanl-800" : "text-slate-700 hover:bg-slate-50"
-        )}
+        className="w-full flex items-center justify-between py-4 text-left transition-colors cursor-pointer group"
       >
-        <span className="flex items-center gap-2">
-          <BookOpen className="h-4 w-4 text-accent-500" />
-          {subcategory.name}
-          <span className="text-xs font-normal text-slate-400">
-            ({subcategory.courses.length} courses)
+        <span className="flex items-center gap-3">
+          {/* Active indicator dot */}
+          <span
+            className={cn(
+              "w-2 h-2 rounded-full transition-colors",
+              isOpen ? "bg-accent-500" : "bg-transparent"
+            )}
+          />
+          <span
+            className={cn(
+              "font-medium tracking-wide transition-colors",
+              isOpen ? "text-hanl-800" : "text-slate-700 group-hover:text-hanl-700"
+            )}
+          >
+            {subcategory.name}
           </span>
         </span>
-        <ChevronDown
-          className={cn(
-            "h-4 w-4 transition-transform duration-200",
-            isOpen && "rotate-180"
-          )}
-        />
+        <span className="flex items-center gap-4">
+          <span className="text-sm text-slate-400">
+            {subcategory.courses.length} {subcategory.courses.length === 1 ? "course" : "courses"}
+          </span>
+          <span
+            className={cn(
+              "w-6 h-6 rounded-full flex items-center justify-center transition-colors",
+              isOpen
+                ? "bg-hanl-700 text-white"
+                : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"
+            )}
+          >
+            {isOpen ? (
+              <Minus className="h-3.5 w-3.5" />
+            ) : (
+              <Plus className="h-3.5 w-3.5" />
+            )}
+          </span>
+        </span>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -47,10 +67,10 @@ function SubcategoryAccordion({ subcategory, defaultOpen = false }: SubcategoryA
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <ul className="px-4 pb-4 pt-2 space-y-1.5">
+            <ul className="pl-5 pb-4 space-y-2">
               {subcategory.courses.map((course, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
-                  <span className="text-accent-500 mt-1.5">•</span>
+                <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                  <span className="text-accent-500 mt-1">—</span>
                   <span className="flex items-center gap-2">
                     {course.name}
                     {course.isNew && (
@@ -75,12 +95,11 @@ interface TrackSectionProps {
 
 function TrackSection({ track }: TrackSectionProps) {
   return (
-    <div className="mb-6 last:mb-0">
-      <h4 className="text-sm font-bold uppercase tracking-wider text-hanl-700 mb-3 flex items-center gap-2">
-        <span className="h-1 w-4 bg-accent-500 rounded-full" />
+    <div className="mb-8 last:mb-0">
+      <h4 className="text-xs font-bold uppercase tracking-widest text-hanl-600 mb-4 pb-2 border-b-2 border-hanl-200">
         {track.name}
       </h4>
-      <div className="space-y-2 pl-2">
+      <div>
         {track.subcategories.map((subcategory, i) => (
           <SubcategoryAccordion key={i} subcategory={subcategory} defaultOpen={i === 0} />
         ))}
@@ -102,13 +121,13 @@ export default function DetailedOfferings({ category }: DetailedOfferingsProps) 
   }
 
   return (
-    <div className="mt-8 pt-8 border-t border-slate-200">
-      <h3 className="text-sm font-bold uppercase tracking-wider text-hanl-700 mb-4">
+    <div className="mt-10 pt-8 border-t border-slate-200">
+      <h3 className="text-xs font-bold uppercase tracking-widest text-hanl-600 mb-6">
         Full Course Catalog
       </h3>
 
       {hasTracks && (
-        <div className="space-y-6">
+        <div>
           {category.tracks!.map((track, i) => (
             <TrackSection key={i} track={track} />
           ))}
@@ -116,7 +135,7 @@ export default function DetailedOfferings({ category }: DetailedOfferingsProps) 
       )}
 
       {hasSubcategories && !hasTracks && (
-        <div className="space-y-2">
+        <div>
           {category.subcategories!.map((subcategory, i) => (
             <SubcategoryAccordion key={i} subcategory={subcategory} defaultOpen={i === 0} />
           ))}

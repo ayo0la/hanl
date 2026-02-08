@@ -8,6 +8,7 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 const variantStyles = {
@@ -33,11 +34,13 @@ export default function Button({
   onClick,
   className,
   type = "button",
+  disabled = false,
 }: ButtonProps) {
   const styles = cn(
-    "inline-flex items-center justify-center gap-2 transition-all duration-200 ease-in-out cursor-pointer",
+    "inline-flex items-center justify-center gap-2 transition-all duration-200 ease-in-out",
     variantStyles[variant],
     sizeStyles[size],
+    disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
     className
   );
 
@@ -50,7 +53,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={styles}>
+    <button type={type} onClick={onClick} className={styles} disabled={disabled}>
       {children}
     </button>
   );

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { industryOptions, programInterestOptions } from "@/lib/constants";
 import Button from "./Button";
-import { Send, CheckCircle } from "lucide-react";
+import { Send } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -26,7 +26,6 @@ export default function ContactForm() {
     programInterest: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -34,46 +33,26 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("submitting");
 
-    // Simulate form submission
-    // TODO: Connect to actual email service or API
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Form submitted:", formData);
-      setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        organization: "",
-        industry: "",
-        programInterest: "",
-        message: "",
-      });
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  if (status === "success") {
-    return (
-      <div className="text-center py-12">
-        <CheckCircle className="h-16 w-16 text-accent-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-white mb-2">
-          Thank You!
-        </h3>
-        <p className="text-slate-300 mb-6">
-          Your request has been received. Our team will get back to you within 48 hours.
-        </p>
-        <Button variant="primary" onClick={() => setStatus("idle")}>
-          Submit Another Request
-        </Button>
-      </div>
+    const subject = encodeURIComponent(
+      `New HTC Inquiry from ${formData.name} - ${formData.organization}`
     );
-  }
+    const body = encodeURIComponent(
+      `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || "Not provided"}
+Organization: ${formData.organization}
+Industry: ${formData.industry || "Not specified"}
+Program Interest: ${formData.programInterest || "Not specified"}
+
+Message:
+${formData.message}`
+    );
+
+    window.location.href = `mailto:amorakinyo1@gmail.com,aymorakinyo1@gmail.com?subject=${subject}&body=${body}`;
+  };
 
   const inputStyles =
     "w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 transition-colors";
@@ -202,25 +181,8 @@ export default function ContactForm() {
         />
       </div>
 
-      {status === "error" && (
-        <p className="text-red-400 text-sm">
-          Something went wrong. Please try again.
-        </p>
-      )}
-
-      <Button
-        type="submit"
-        variant="primary"
-        size="lg"
-        className="w-full"
-      >
-        {status === "submitting" ? (
-          "Submitting..."
-        ) : (
-          <>
-            Send Request <Send className="h-4 w-4" />
-          </>
-        )}
+      <Button type="submit" variant="primary" size="lg" className="w-full">
+        Send Request <Send className="h-4 w-4" />
       </Button>
     </form>
   );

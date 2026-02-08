@@ -45,7 +45,8 @@ export const siteConfig = {
     "Premier learning and capacity-building organization combining 20+ years of training methodologies with cutting-edge AI and automation expertise. 1,500+ courses designed for the Nigerian professional landscape.",
   url: "https://www.honorstraining.ng",
   email: "info@honorstraining.ng",
-  phone: "+234 XXX XXX XXXX",
+  contactEmails: ["amorakinyo1@gmail.com", "aymorakinyo1@gmail.com"],
+  phone: "+1 (346) 376-8706",
   address: "Lagos, Nigeria",
 };
 
