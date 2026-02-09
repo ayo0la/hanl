@@ -64,9 +64,6 @@ export const financialServicesSubcategories: CourseSubcategory[] = [
         name: "SME & Retail Banking",
       },
       {
-        name: "SME Banking",
-      },
-      {
         name: "Trade Finance",
       },
       {

@@ -47,7 +47,7 @@ export const educationSubcategories: CourseSubcategory[] = [
     ],
   },
   {
-    name: "Professional Development for Educators",
+    name: "Professional Development for\u00a0Educators",
     courses: [
       {
         name: "Academic Writing & Publication Skills",

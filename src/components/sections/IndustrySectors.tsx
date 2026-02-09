@@ -22,8 +22,8 @@ export default function IndustrySectors() {
           {industrySectors.map((sector, index) => {
             const Icon = sector.icon;
             return (
-              <ScrollReveal key={index} delay={index * 0.08}>
-                <div className="group bg-hanl-800/80 backdrop-blur-sm rounded-xl p-6 border border-hanl-700/50 hover:border-accent-500/60 hover:bg-hanl-700/40 transition-all duration-300">
+              <ScrollReveal key={index} delay={index * 0.08} className="h-full">
+                <div className="group h-full bg-hanl-800/80 backdrop-blur-sm rounded-xl p-6 border border-hanl-700/50 hover:border-accent-500/60 hover:bg-hanl-700/40 transition-all duration-300">
                   <Icon className="h-10 w-10 text-accent-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="text-base font-bold text-white mb-1">
                     {sector.name}
