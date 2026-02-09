@@ -22,6 +22,12 @@ import {
   Layers,
   Headphones,
   Scale,
+  DollarSign,
+  Clock,
+  Lightbulb,
+  Rocket,
+  Handshake,
+  Sparkles,
 } from "lucide-react";
 import type {
   NavLink,
@@ -35,7 +41,19 @@ import type {
   Stat,
   Testimonial,
   FooterSection,
+  JobListing,
+  FacilitatorBenefit,
 } from "@/types";
+import {
+  financialServicesSubcategories,
+  energyTracks,
+  criticalSkillsSubcategories,
+  governmentSubcategories,
+  manufacturingSubcategories,
+  itTelecomSubcategories,
+  boardCSuiteSubcategories,
+  educationSubcategories,
+} from "@/lib/courses";
 
 export const siteConfig = {
   name: "HTC",
@@ -55,6 +73,7 @@ export const navLinks: NavLink[] = [
   { label: "Learning Solutions", href: "#delivery" },
   { label: "Industry Sectors", href: "#sectors" },
   { label: "Programs", href: "#programs" },
+  { label: "Careers", href: "/careers", disabled: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -200,79 +219,7 @@ export const courseCategories: CourseCategory[] = [
       "Robo-advisory wealth management systems",
     ],
     courseCount: "80+",
-    subcategories: [
-      {
-        name: "AI & Automation Courses",
-        courses: [
-          { name: "AI-Driven Credit Risk Assessment & Scoring", isNew: true },
-          { name: "Automated Fraud Detection Systems", isNew: true },
-          { name: "Predictive Analytics for Banking", isNew: true },
-          { name: "Machine Learning for AML Compliance", isNew: true },
-          { name: "Digital Banking Transformation", isNew: true },
-          { name: "Algorithmic Trading Fundamentals", isNew: true },
-        ],
-      },
-      {
-        name: "Banking Programmes",
-        courses: [
-          { name: "Credit Suite – Commercial, Small Business, Consumer" },
-          { name: "Project Finance School" },
-          { name: "Loan Workouts" },
-          { name: "SME & Retail Banking" },
-          { name: "Trade Finance" },
-          { name: "Agriculture Finance" },
-          { name: "Selling Treasury & Corporate Banking Products" },
-        ],
-      },
-      {
-        name: "Non-Banking Programmes",
-        courses: [
-          { name: "Capital Market" },
-          { name: "Corporate Finance" },
-          { name: "Investment & Asset Management" },
-          { name: "Insurance School" },
-          { name: "Pension Management" },
-        ],
-      },
-      {
-        name: "Risk Management",
-        courses: [
-          { name: "Risk School" },
-          { name: "Advanced Risk Management" },
-          { name: "Basel III & The Regulatory Framework" },
-          { name: "Solvency II" },
-          { name: "Blockchain in Banking" },
-          { name: "Energy Risk Management" },
-          { name: "Cyber Risk Management" },
-          { name: "IT Risk Management" },
-          { name: "Treasury Risk Management" },
-          { name: "Credit Risk Management" },
-          { name: "Agribusiness Risk Management" },
-          { name: "Export Risk Management" },
-          { name: "Talent Risk Management" },
-          { name: "Ethics & Legal Compliance Training" },
-          { name: "Operational Risk & Sustainability" },
-          { name: "Risk Assessment based on ISO 31000 and ISO/IEC 31010" },
-          { name: "Enterprise Risk Management: Integrating New COSO Framework" },
-        ],
-      },
-      {
-        name: "Finance",
-        courses: [
-          { name: "Macroeconomics Simulation" },
-          { name: "Treasury Management" },
-          { name: "Treasury Operations" },
-          { name: "Trading" },
-          { name: "Derivatives School" },
-          { name: "Bonds & Fixed Income School" },
-          { name: "ALM & Funds Transfer Pricing" },
-        ],
-      },
-      {
-        name: "Legal Issues in Business",
-        courses: [{ name: "Legal Issues in Business" }],
-      },
-    ],
+    subcategories: financialServicesSubcategories,
   },
   {
     shortName: "Energy",
@@ -294,96 +241,7 @@ export const courseCategories: CourseCategory[] = [
       "IoT sensor networks for asset integrity",
     ],
     courseCount: "60+",
-    tracks: [
-      {
-        name: "AI & Automation in Energy",
-        subcategories: [
-          {
-            name: "AI & Automation Courses",
-            courses: [
-              { name: "Predictive Maintenance Using AI & IoT", isNew: true },
-              { name: "AI in Exploration & Seismic Analysis", isNew: true },
-              { name: "Automated Pipeline Monitoring", isNew: true },
-              { name: "Smart Grid Optimization with ML", isNew: true },
-              { name: "Renewable Energy Forecasting", isNew: true },
-              { name: "Digital Twin Technology for Assets", isNew: true },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Oil & Gas",
-        subcategories: [
-          {
-            name: "Upstream",
-            courses: [
-              { name: "Introduction to Offshore Drilling and Production Facilities" },
-              { name: "Drilling Essentials for New Engineers and Non-Technical Professionals" },
-              { name: "Introduction to Exploration & Production in Oil and Gas" },
-              { name: "Reservoir Engineering Basics" },
-              { name: "Corrosion Prevention in Oil and Gas" },
-              { name: "Petroleum Geology for Non-Geologists" },
-              { name: "Introduction to Petrophysics" },
-              { name: "Fundamentals of Seismic for Non-Geophysicists" },
-              { name: "Deepwater Completions Operations" },
-              { name: "Directional, Horizontal & Multilateral Drilling" },
-              { name: "Flow Assurance for Offshore Field Development" },
-              { name: "Fundamentals of E&P Data Management" },
-              { name: "High Pressure High Temperature Completions & Well Engineering" },
-              { name: "Petroleum Geochemistry for Explorationists" },
-              { name: "Reservoir Engineering for Technical Disciplines" },
-            ],
-          },
-          {
-            name: "Downstream",
-            courses: [
-              { name: "Understanding the Oil & Gas Industry Value Chain" },
-              { name: "Contracts and Fiscal Policies in Oil & Gas" },
-              { name: "Corrosion Prevention in Oil & Gas Operations" },
-              { name: "Managing HSE Concerns in Oil & Gas" },
-              { name: "Project Management in Oil & Gas" },
-              { name: "Fundamentals of Petroleum Economics & Risk Analysis" },
-              { name: "Fundamentals of Natural Gas Exploitation & Processing" },
-              { name: "Reservoir Simulation" },
-              { name: "Asset Integrity Management" },
-              { name: "Refining Technology Fundamentals" },
-              { name: "Process Safety Management" },
-              { name: "Downstream Cash Flow Management" },
-              { name: "Freight Transport" },
-              { name: "Gas Processing" },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Power",
-        subcategories: [
-          {
-            name: "Transmission & Distribution",
-            courses: [
-              { name: "Electric Power Transmission and Distribution Engineering" },
-              { name: "Revenue Generation & Assurance for Distribution Companies" },
-              { name: "Power Distribution Systems Management and Automation" },
-              { name: "Meters Asset Providers (MAP)" },
-              { name: "Infrastructure Planning in a Liberalised Market" },
-              { name: "Electricity Tariff Workshop" },
-              { name: "Combating Electricity Theft Using Technology" },
-              { name: "Metering, Smart Grid & MSPs Workshop" },
-              { name: "Mastering Power Purchase Agreements" },
-              { name: "Code of Safe Practice for Static Electricity Hazards" },
-            ],
-          },
-          {
-            name: "Renewable Energy",
-            courses: [
-              { name: "Renewable Energy Solutions" },
-              { name: "Mini Grid Workshop" },
-              { name: "Renewable Energy Management and Finance" },
-            ],
-          },
-        ],
-      },
-    ],
+    tracks: energyTracks,
   },
   {
     shortName: "Critical Skills",
@@ -405,98 +263,7 @@ export const courseCategories: CourseCategory[] = [
       "AI-powered performance management systems",
     ],
     courseCount: "120+",
-    subcategories: [
-      {
-        name: "AI & Automation Courses",
-        courses: [
-          { name: "AI-Enhanced Leadership & Decision Making", isNew: true },
-          { name: "Data-Driven Strategic Planning", isNew: true },
-          { name: "Digital Communication & Collaboration", isNew: true },
-          { name: "Project Management with AI Tools", isNew: true },
-          { name: "HR Analytics & Talent Management", isNew: true },
-          { name: "Change Management for AI Adoption", isNew: true },
-        ],
-      },
-      {
-        name: "Workplace Wellness",
-        courses: [
-          { name: "Emotional Intelligence in the Corporate Environment", isNew: true },
-          { name: "Managing & Improving Mental Health in the Workplace", isNew: true },
-          { name: "Achieving a Desirable Work-Life Balance", isNew: true },
-        ],
-      },
-      {
-        name: "Managing Millennials",
-        courses: [
-          { name: "Managing the Millennial & the Changing Workplace", isNew: true },
-          { name: "Maximizing Productivity of the Millennial Workforce", isNew: true },
-          { name: "Mentoring & Coaching the Millennial", isNew: true },
-        ],
-      },
-      {
-        name: "Corporate Culture",
-        courses: [
-          { name: "Building Professional Ethics in the Workplace", isNew: true },
-          { name: "Ensuring Optimal & Positive Employee Engagement", isNew: true },
-          { name: "Maximizing Capabilities in a Tech-Driven World", isNew: true },
-          { name: "Effective Ways to Win Over Next Generation Leaders", isNew: true },
-        ],
-      },
-      {
-        name: "Leadership & Management",
-        courses: [
-          { name: "Management Development – Junior, Intermediate, Senior Levels" },
-          { name: "Building Leadership Competencies" },
-          { name: "Leadership & Visioning" },
-          { name: "Building & Leading a Team of High Performers" },
-          { name: "Advanced Project Management & Strategic Leadership" },
-          { name: "The One-Week MBA" },
-        ],
-      },
-      {
-        name: "Strategy",
-        courses: [
-          { name: "Setting Achievable Goals & Managing Them", isNew: true },
-          { name: "Achieving Organization Goals through Effective M&E" },
-          { name: "Strategy, Risk & Execution Monitoring" },
-          { name: "Successful Strategy Implementation in a Volatile Environment" },
-        ],
-      },
-      {
-        name: "HR & Talent Management",
-        courses: [
-          { name: "On-Boarding & Induction Programs" },
-          { name: "Employee Engagement through Innovation & Reward Systems" },
-          { name: "HR Metrics & Analytics" },
-          { name: "Succession Planning & Talent Management" },
-          { name: "Managing Compensation & Benefits" },
-        ],
-      },
-      {
-        name: "Customer Relationships",
-        courses: [
-          { name: "Relationship Marketing" },
-          { name: "Customer Relationship Management" },
-          { name: "Customer Selling Excellence" },
-          { name: "Key Account Management" },
-        ],
-      },
-      {
-        name: "Organisational Growth",
-        courses: [
-          { name: "Developing Governance & Structure for SME Growth" },
-          { name: "Coaching & Mentoring for Organizational Growth" },
-        ],
-      },
-      {
-        name: "Other Critical Skills",
-        courses: [
-          { name: "Improving Personal Effectiveness & Time Management" },
-          { name: "Business Writing & Presentation Skills" },
-          { name: "Competitive Selling & Negotiating Skills" },
-        ],
-      },
-    ],
+    subcategories: criticalSkillsSubcategories,
   },
   {
     shortName: "Government",
@@ -518,37 +285,7 @@ export const courseCategories: CourseCategory[] = [
       "Data analytics for evidence-based governance",
     ],
     courseCount: "50+",
-    subcategories: [
-      {
-        name: "AI & Automation Courses",
-        courses: [
-          { name: "AI in Public Service Delivery", isNew: true },
-          { name: "Automated Document Processing & E-Government", isNew: true },
-          { name: "AI for Revenue Collection & Tax Optimization", isNew: true },
-          { name: "Predictive Analytics for Policy Making", isNew: true },
-          { name: "Smart City Technologies & IoT", isNew: true },
-          { name: "Government Process Automation", isNew: true },
-        ],
-      },
-      {
-        name: "Public Sector Development",
-        courses: [
-          { name: "Building the 21st Century Public Service Organization" },
-          { name: "Leveraging Technology for Effective Documentation & Data Management" },
-          { name: "Entrepreneurship Skills & Post-retirement Investment Planning" },
-          { name: "Revenue Optimization & Commercial Orientation for MDAs" },
-          { name: "Achieving MDA Goals through Effective Planning, M&E" },
-          { name: "Employee Engagement and Reward Systems" },
-          { name: "Transforming Public Sector Service Delivery" },
-          { name: "Managing Millennials in a Changing Workplace" },
-          { name: "Leadership and Management" },
-          { name: "Coaching and Mentoring for Managers & Directors" },
-          { name: "HR Metrics and Analytics" },
-          { name: "Succession Planning" },
-          { name: "Board Excellence for Directors & Heads of Parastatals" },
-        ],
-      },
-    ],
+    subcategories: governmentSubcategories,
   },
   {
     shortName: "Manufacturing",
@@ -570,56 +307,7 @@ export const courseCategories: CourseCategory[] = [
       "Yield prediction and resource optimization",
     ],
     courseCount: "45+",
-    subcategories: [
-      {
-        name: "AI & Automation Courses",
-        courses: [
-          { name: "AI in Precision Agriculture & Crop Monitoring", isNew: true },
-          { name: "Automated Quality Control in Manufacturing", isNew: true },
-          { name: "Supply Chain Optimization with AI", isNew: true },
-          { name: "Predictive Demand Planning", isNew: true },
-          { name: "IoT & Sensor Networks for Agriculture", isNew: true },
-          { name: "AI for Export Market Analysis", isNew: true },
-        ],
-      },
-      {
-        name: "Export Courses",
-        courses: [
-          { name: "Integrated Export Management Programme" },
-          { name: "Export Quality Management" },
-          { name: "Export Trade Finance" },
-          { name: "Export Documentation" },
-          { name: "Export Supply Chain Management" },
-          { name: "International Customer Service" },
-          { name: "Export Risk Management" },
-          { name: "Export Compliance" },
-        ],
-      },
-      {
-        name: "Manufacturing Courses",
-        courses: [
-          { name: "Risk Assessment based on ISO 31000 and ISO/IEC 31010" },
-          { name: "Enterprise-wide Risk Management – Strategy & Performance" },
-          { name: "Lean Manufacturing" },
-          { name: "Risk Regulatory & Compliance for SMEs" },
-          { name: "Supply Chain Management Service" },
-          { name: "Fundamentals of Cost and Budgetary Control" },
-          { name: "Quality Management in Manufacturing" },
-          { name: "Redesigning the Product Development Process" },
-          { name: "Manufacturing and Product Design" },
-        ],
-      },
-      {
-        name: "Agricultural Courses",
-        courses: [
-          { name: "Basic Financial Management in the Agricultural Sector" },
-          { name: "International Trade Finance for Agriculture Exporters" },
-          { name: "Agricultural Value Chain Management" },
-          { name: "Sustainable Agriculture" },
-          { name: "Enterprise-wide Risk Management in Agriculture" },
-        ],
-      },
-    ],
+    subcategories: manufacturingSubcategories,
   },
   {
     shortName: "IT & Telecom",
@@ -641,59 +329,7 @@ export const courseCategories: CourseCategory[] = [
       "End-to-end AI model development pipelines",
     ],
     courseCount: "150+",
-    subcategories: [
-      {
-        name: "AI & Automation Courses",
-        courses: [
-          { name: "Machine Learning Engineering", isNew: true },
-          { name: "Deep Learning & Neural Networks", isNew: true },
-          { name: "Natural Language Processing (NLP)", isNew: true },
-          { name: "Robotic Process Automation (RPA)", isNew: true },
-          { name: "Large Language Models & Generative AI", isNew: true },
-          { name: "Cloud AI Infrastructure & MLOps", isNew: true },
-        ],
-      },
-      {
-        name: "Information Technology",
-        courses: [
-          { name: "Operating Systems" },
-          { name: "Payment Systems and Risks" },
-          { name: "COBIT Training" },
-          { name: "Cloud Computing" },
-          { name: "Internet of Things" },
-          { name: "Business Intelligence and Data Analytics" },
-          { name: "Digital Governance" },
-          { name: "Information Technology for Managers" },
-          { name: "Office Productivity and Collaboration Tools" },
-          { name: "FinTech" },
-        ],
-      },
-      {
-        name: "Cyber Security",
-        courses: [
-          { name: "Information Security Incident Investigation & Management" },
-          { name: "Defense in Depth" },
-          { name: "IS Vulnerability Management" },
-          { name: "Cloud Security" },
-          { name: "Social Media Security" },
-          { name: "Ransomware Mitigation" },
-          { name: "Mobile Security" },
-          { name: "Building a SOC" },
-        ],
-      },
-      {
-        name: "Telecommunications",
-        courses: [
-          { name: "Telecom Boot Camp" },
-          { name: "Tower Rigging and Safety Practices" },
-          { name: "Advanced 4G LTE Technology" },
-          { name: "Introduction to 5G" },
-          { name: "5G Engineering" },
-          { name: "Disruptive Technologies for Telcos and CSPs" },
-          { name: "Telcos Cyber Security Training" },
-        ],
-      },
-    ],
+    subcategories: itTelecomSubcategories,
   },
   {
     shortName: "Board & C-Suite",
@@ -715,63 +351,28 @@ export const courseCategories: CourseCategory[] = [
       "Strategic AI roadmap development",
     ],
     courseCount: "30+",
-    subcategories: [
-      {
-        name: "AI & Automation Courses",
-        courses: [
-          { name: "AI Strategy for C-Suite Executives", isNew: true },
-          { name: "Board Oversight of AI & Emerging Technologies", isNew: true },
-          { name: "AI Risk Management & Governance Frameworks", isNew: true },
-          { name: "Digital Transformation Leadership", isNew: true },
-          { name: "AI Investment & ROI Analysis", isNew: true },
-          { name: "Ethical AI & Regulatory Compliance", isNew: true },
-        ],
-      },
-      {
-        name: "Risk Courses",
-        courses: [
-          { name: "Applied Risk Governance" },
-          { name: "Executive Insight into Risk Analytics and Risk Modeling" },
-          { name: "Advanced Credit Risk Management and Analysis" },
-          { name: "Risk Regulatory Compliance – Solvency II / Basel II" },
-        ],
-      },
-      {
-        name: "IT Courses",
-        courses: [
-          { name: "Cyber Security for Boards and Executives" },
-          { name: "Cyber Risk Insurance" },
-          { name: "Board Digitization" },
-        ],
-      },
-      {
-        name: "Leadership Courses",
-        courses: [
-          { name: "CEO & Executive Coaching" },
-          { name: "The Strategic Board" },
-          { name: "Emerging Perspectives to Performance Management" },
-          { name: "Improving Board Effectiveness" },
-        ],
-      },
-      {
-        name: "Financial Courses",
-        courses: [
-          { name: "Mastering Financial Governance" },
-          { name: "Finance for Executives" },
-          { name: "Audit Management" },
-        ],
-      },
-      {
-        name: "Board Governance",
-        courses: [
-          { name: "Legal Requirements of Being a Director" },
-          { name: "Practical Challenges to Being an Effective Director" },
-          { name: "Chairmanship / Board Leadership Skills" },
-          { name: "Maximizing Board Relationships" },
-          { name: "Board Challenge and Decision-Making Competencies" },
-        ],
-      },
+    subcategories: boardCSuiteSubcategories,
+  },
+  {
+    shortName: "Education",
+    fullTitle: "Education & Research + AI",
+    description:
+      "Comprehensive learning solutions for universities, polytechnics, and educational institutions. Our programs empower educators, administrators, and researchers with modern pedagogical approaches, institutional management skills, and AI-powered educational technologies.",
+    topics: [
+      "AI-Powered Learning Management Systems",
+      "EdTech Innovation & Digital Curriculum Design",
+      "Data Analytics for Academic Performance",
+      "Automation in University Administration",
+      "AI for Research & Academic Publishing",
     ],
+    aiIntegration: [
+      "Adaptive learning platforms with personalized pathways",
+      "Automated assessment and intelligent tutoring systems",
+      "Predictive analytics for student retention",
+      "AI-assisted research and literature analysis tools",
+    ],
+    courseCount: "20+",
+    subcategories: educationSubcategories,
   },
 ];
 
@@ -937,6 +538,7 @@ export const footerSections: FooterSection[] = [
       { label: "Learning Solutions", href: "#delivery" },
       { label: "Industry Sectors", href: "#sectors" },
       { label: "Programs", href: "#programs" },
+      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "#contact" },
     ],
   },
@@ -970,4 +572,232 @@ export const programInterestOptions = [
   "AI Implementation Accelerator",
   "Custom Corporate Training",
   "Not Sure — Need Guidance",
+];
+
+// ─── Careers Page ────────────────────────────────────────
+
+export const facilitatorBenefits: FacilitatorBenefit[] = [
+  {
+    icon: DollarSign,
+    title: "Competitive Compensation",
+    description:
+      "Industry-leading facilitator fees with performance bonuses and timely payments for every engagement.",
+  },
+  {
+    icon: Clock,
+    title: "Flexible Schedule",
+    description:
+      "Choose engagements that fit your calendar. Deliver in-person, virtual, or blended sessions on your terms.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Cutting-Edge Content",
+    description:
+      "Teach from constantly updated, AI-integrated curricula developed by subject matter experts and instructional designers.",
+  },
+  {
+    icon: Rocket,
+    title: "Professional Growth",
+    description:
+      "Access train-the-trainer programs, certifications, and continuous learning opportunities to sharpen your expertise.",
+  },
+  {
+    icon: Handshake,
+    title: "Collaborative Community",
+    description:
+      "Join a network of 60+ experienced facilitators who share best practices, insights, and peer mentorship.",
+  },
+  {
+    icon: Sparkles,
+    title: "Meaningful Impact",
+    description:
+      "Shape the future of Nigerian professionals by delivering transformative learning experiences across 8 industry sectors.",
+  },
+];
+
+export const jobListings: JobListing[] = [
+  {
+    id: "senior-facilitator-financial-services",
+    title: "Senior Training Facilitator — Financial Services",
+    department: "Financial Services",
+    location: "Lagos, Nigeria",
+    type: "Full-Time",
+    description:
+      "Lead high-impact training programs for banks, insurance companies, capital market firms, and their regulators. You will design and deliver courses covering credit risk, treasury, trade finance, and AI-driven financial solutions.",
+    responsibilities: [
+      "Deliver instructor-led and blended training sessions for financial services clients",
+      "Customize course content based on client needs and industry developments",
+      "Develop case studies and practical exercises using real-world Nigerian financial scenarios",
+      "Mentor junior facilitators and contribute to curriculum review processes",
+      "Provide post-training support and implementation guidance to participants",
+    ],
+    requirements: [
+      "10+ years of experience in banking, insurance, or capital markets",
+      "Proven track record of delivering corporate training programs",
+      "Professional certifications (ACCA, CFA, FRM, CIBN, or equivalent) preferred",
+      "Strong presentation and facilitation skills with ability to engage senior audiences",
+      "Understanding of AI applications in financial services is a plus",
+    ],
+  },
+  {
+    id: "facilitator-energy-power",
+    title: "Training Facilitator — Energy & Power",
+    department: "Energy & Power",
+    location: "Lagos, Nigeria",
+    type: "Full-Time",
+    description:
+      "Deliver technical and managerial training programs for oil and gas, power, and renewable energy organizations. You will facilitate courses on upstream/downstream operations, power distribution, and energy transition topics.",
+    responsibilities: [
+      "Facilitate training programs covering upstream, downstream, and power sector topics",
+      "Adapt course materials for different technical audiences and experience levels",
+      "Incorporate industry developments and regulatory changes into training content",
+      "Coordinate with client L&D teams to assess training needs and design solutions",
+      "Evaluate participant performance and provide actionable feedback reports",
+    ],
+    requirements: [
+      "8+ years of experience in oil & gas, power generation, or renewable energy",
+      "Experience designing or delivering technical training programs",
+      "Engineering background or relevant technical qualifications preferred",
+      "Familiarity with Nigerian energy sector regulations (DPR/NUPRC, NERC)",
+      "Ability to simplify complex technical concepts for diverse audiences",
+    ],
+  },
+  {
+    id: "ai-automation-specialist",
+    title: "AI & Automation Training Specialist",
+    department: "Technology",
+    location: "Lagos, Nigeria (Hybrid)",
+    type: "Full-Time",
+    description:
+      "Pioneer our AI-first training programs across all industry verticals. You will develop and deliver courses on machine learning, generative AI, RPA, and digital transformation tailored to Nigerian business contexts.",
+    responsibilities: [
+      "Design and deliver AI, ML, and automation training programs across multiple sectors",
+      "Build hands-on labs, demos, and practical exercises using real-world tools and datasets",
+      "Stay current with AI developments and continuously update course content",
+      "Support client organizations with AI readiness assessments and implementation roadmaps",
+      "Contribute to HTC's thought leadership through articles, webinars, and conference presentations",
+    ],
+    requirements: [
+      "5+ years of hands-on experience with AI/ML technologies in production environments",
+      "Experience with popular frameworks (TensorFlow, PyTorch, scikit-learn) and cloud AI platforms",
+      "Proven ability to teach complex technical topics to non-technical audiences",
+      "Portfolio of AI projects or published work demonstrating applied expertise",
+      "Cloud certifications (AWS ML, Azure AI, GCP) are a strong advantage",
+    ],
+  },
+  {
+    id: "facilitator-it-telecom",
+    title: "Training Facilitator — IT & Telecommunications",
+    department: "IT & Telecommunications",
+    location: "Lagos, Nigeria",
+    type: "Contract",
+    description:
+      "Deliver IT and telecom training programs covering cybersecurity, cloud computing, 5G technologies, and digital governance for tech companies and enterprise IT teams.",
+    responsibilities: [
+      "Facilitate courses on cybersecurity, cloud, networking, and telecommunications technologies",
+      "Develop practical lab exercises and simulation environments for hands-on learning",
+      "Customize technical content for different skill levels from beginner to advanced",
+      "Maintain and update technical training environments and demo systems",
+      "Provide certification preparation support for industry-recognized credentials",
+    ],
+    requirements: [
+      "7+ years of experience in IT infrastructure, cybersecurity, or telecommunications",
+      "Industry certifications (CISSP, CCNA, AWS Solutions Architect, or similar)",
+      "Experience delivering instructor-led technical training",
+      "Strong lab-building skills with virtualization and cloud platforms",
+      "Knowledge of Nigerian telecom market and regulatory landscape preferred",
+    ],
+  },
+  {
+    id: "facilitator-critical-skills",
+    title: "Training Facilitator — Critical Skills & Leadership",
+    department: "Critical Skills",
+    location: "Lagos, Nigeria",
+    type: "Full-Time",
+    description:
+      "Deliver management development, leadership, and soft skills training programs for mid-to-senior level professionals across all industry sectors. Focus areas include leadership competencies, strategic planning, HR analytics, and workplace effectiveness.",
+    responsibilities: [
+      "Facilitate leadership development, management, and professional skills programs",
+      "Design engaging learning activities including role-plays, case studies, and group exercises",
+      "Coach and mentor program participants on personal development goals",
+      "Assess training needs and recommend appropriate learning interventions",
+      "Track and measure training effectiveness using industry-standard evaluation frameworks",
+    ],
+    requirements: [
+      "8+ years of experience in learning & development, HR, or organizational development",
+      "Certified trainer or coach (ATD, ICF, CIPD, or equivalent) preferred",
+      "Strong understanding of adult learning principles and instructional design",
+      "Excellent presentation and group facilitation skills",
+      "Experience working with C-suite and senior management audiences",
+    ],
+  },
+  {
+    id: "facilitator-government",
+    title: "Training Facilitator — Government & Public Sector",
+    department: "Government",
+    location: "Abuja, Nigeria",
+    type: "Contract",
+    description:
+      "Design and deliver capacity-building programs for federal and state government agencies, MDAs, and parastatals. Programs cover public sector reform, digital transformation, revenue optimization, and governance excellence.",
+    responsibilities: [
+      "Deliver training programs for government agencies across federal and state levels",
+      "Adapt private sector best practices for public sector contexts and constraints",
+      "Develop case studies relevant to Nigerian government operations and challenges",
+      "Support client agencies with post-training implementation and change management",
+      "Build relationships with government L&D departments and training coordinators",
+    ],
+    requirements: [
+      "8+ years of experience in public administration, governance, or government consulting",
+      "Demonstrated experience delivering training to government audiences",
+      "Understanding of Nigerian public sector structure, policies, and reform agenda",
+      "Strong facilitation skills with ability to navigate hierarchical organizational cultures",
+      "Master's degree in Public Administration, Public Policy, or related field preferred",
+    ],
+  },
+  {
+    id: "curriculum-development-lead",
+    title: "Curriculum Development Lead",
+    department: "Learning Design",
+    location: "Lagos, Nigeria (Hybrid)",
+    type: "Full-Time",
+    description:
+      "Lead the design and development of HTC's training curricula across all industry verticals. You will ensure all programs are pedagogically sound, industry-relevant, and integrate AI and emerging technologies throughout.",
+    responsibilities: [
+      "Lead end-to-end curriculum design for new courses and program updates",
+      "Conduct industry research and needs analysis to identify training gaps",
+      "Collaborate with subject matter experts to develop accurate, current content",
+      "Establish quality standards and review processes for all training materials",
+      "Integrate AI tools and digital learning methodologies into existing curricula",
+    ],
+    requirements: [
+      "7+ years of experience in instructional design or curriculum development",
+      "Strong understanding of adult learning theories and assessment design",
+      "Experience designing training for corporate or professional audiences",
+      "Proficiency with e-learning authoring tools and LMS platforms",
+      "Background in multiple industry domains is a significant advantage",
+    ],
+  },
+  {
+    id: "training-program-coordinator",
+    title: "Training Program Coordinator",
+    department: "Operations",
+    location: "Lagos, Nigeria",
+    type: "Full-Time",
+    description:
+      "Coordinate the planning, scheduling, and logistics for HTC's training programs across all delivery formats. You will serve as the primary point of contact between facilitators, clients, and internal teams to ensure seamless program delivery.",
+    responsibilities: [
+      "Plan and coordinate training schedules, venues, and logistics across multiple programs",
+      "Manage facilitator assignments and availability scheduling",
+      "Handle client communications including pre-training coordination and post-training follow-up",
+      "Maintain training records, attendance, and participant feedback databases",
+      "Support proposal development and client onboarding processes",
+    ],
+    requirements: [
+      "3+ years of experience in training coordination, event management, or project coordination",
+      "Excellent organizational skills with ability to manage multiple concurrent programs",
+      "Strong communication skills and professional client-facing demeanor",
+      "Proficiency in Microsoft Office suite and project management tools",
+      "Experience in the training or professional development industry preferred",
+    ],
+  },
 ];

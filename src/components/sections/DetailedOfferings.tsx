@@ -22,7 +22,6 @@ function SubcategoryAccordion({ subcategory, defaultOpen = false }: SubcategoryA
         className="w-full flex items-center justify-between py-4 text-left transition-colors cursor-pointer group"
       >
         <span className="flex items-center gap-3">
-          {/* Active indicator dot */}
           <span
             className={cn(
               "w-2 h-2 rounded-full transition-colors",
@@ -67,18 +66,16 @@ function SubcategoryAccordion({ subcategory, defaultOpen = false }: SubcategoryA
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <ul className="pl-5 pb-4 space-y-2">
+            <ul className="pl-5 pb-4 space-y-1.5">
               {subcategory.courses.map((course, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
-                  <span className="text-accent-500 mt-1">—</span>
-                  <span className="flex items-center gap-2">
-                    {course.name}
-                    {course.isNew && (
-                      <Badge variant="gold" className="text-[10px] py-0 px-1.5">
-                        NEW
-                      </Badge>
-                    )}
-                  </span>
+                <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
+                  <span className="text-slate-400">&mdash;</span>
+                  <span>{course.name}</span>
+                  {course.isNew && (
+                    <Badge variant="gold" className="text-[10px] py-0 px-1.5">
+                      NEW
+                    </Badge>
+                  )}
                 </li>
               ))}
             </ul>

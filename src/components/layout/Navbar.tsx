@@ -42,15 +42,24 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-white/80 hover:text-accent-500 transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.disabled ? (
+                <span
+                  key={link.href}
+                  className="text-sm font-semibold uppercase tracking-wide text-white/30 cursor-not-allowed"
+                >
+                  {link.label}
+                </span>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-semibold uppercase tracking-wide text-white/80 hover:text-accent-500 transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </div>
 
           {/* Desktop CTA */}

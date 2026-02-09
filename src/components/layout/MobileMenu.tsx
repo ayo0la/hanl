@@ -21,16 +21,25 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           className="fixed inset-0 z-40 bg-hanl-900 lg:hidden"
         >
           <div className="flex flex-col items-center justify-center h-full gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={onClose}
-                className="text-2xl font-bold uppercase tracking-wide text-white hover:text-accent-500 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.disabled ? (
+                <span
+                  key={link.href}
+                  className="text-2xl font-bold uppercase tracking-wide text-white/30 cursor-not-allowed"
+                >
+                  {link.label}
+                </span>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
+                  className="text-2xl font-bold uppercase tracking-wide text-white hover:text-accent-500 transition-colors"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <div className="mt-4">
               <Button href="#contact" variant="primary" size="lg" onClick={onClose}>
                 Request a Proposal

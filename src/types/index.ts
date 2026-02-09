@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 export interface NavLink {
   label: string;
   href: string;
+  disabled?: boolean;
 }
 
 export interface ValueProp {
@@ -93,4 +94,21 @@ export interface Testimonial {
 export interface FooterSection {
   heading: string;
   links: { label: string; href: string }[];
+}
+
+export interface JobListing {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: "Full-Time" | "Contract" | "Part-Time";
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+}
+
+export interface FacilitatorBenefit {
+  icon: LucideIcon;
+  title: string;
+  description: string;
 }
