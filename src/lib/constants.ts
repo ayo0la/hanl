@@ -79,10 +79,10 @@ export const navLinks: NavLink[] = [
 ];
 
 export const heroContent = {
-  eyebrow: "AI-FIRST LEARNING SOLUTIONS",
+  eyebrow: "HORNS TRAINING & CONSULTING",
   headline: "Powering Performance Where Strategy, Culture, and Intelligence Meet",
   subtitle:
-    "Premier consulting and capacity-building organization combining 20+ years of proven training methodologies with cutting-edge AI and automation expertise. 1,500+ courses designed for the Nigerian professional landscape.",
+    "Premier strategic and capacity-building organization combining decades of strategic  methodologies with cutting edge AI integration, delivering practical implementation focus programs designed for the business landscape",
   primaryCta: { label: "Explore Programs", href: "#programs" },
   secondaryCta: { label: "Request a Proposal", href: "#contact" },
 };

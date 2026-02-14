@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import OurPurpose from "@/components/sections/OurPurpose";
 import ValueProposition from "@/components/sections/ValueProposition";
 import WhatWeDeliver from "@/components/sections/WhatWeDeliver";
 import DeliveryMethods from "@/components/sections/DeliveryMethods";
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <OurPurpose />
         <ValueProposition />
         <WhatWeDeliver />
         <DeliveryMethods />
