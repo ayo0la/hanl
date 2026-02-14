@@ -82,7 +82,7 @@ export const heroContent = {
   eyebrow: "HONORS TRAINING & CONSULTING",
   headline: "Powering Performance Where Strategy, Culture, and Intelligence Meet",
   subtitle:
-    "Premier strategic and capacity-building organization combining decades of strategic  methodologies with cutting edge AI integration, delivering practical implementation focus programs designed for the business landscape",
+    "Premier strategic and capacity-building organization combining decades of strategic consulting and training methodologies with cutting edge AI integration, delivering practical implementation focus programs designed for the business landscape",
   primaryCta: { label: "Explore Programs", href: "#programs" },
   secondaryCta: { label: "Request a Proposal", href: "#contact" },
 };
@@ -109,12 +109,14 @@ export const valuePropositions: ValueProp[] = [
   {
     icon: Lightbulb,
     title: "Cultural Approach",
-    description: "",
+    description:
+      "We design consulting and training solutions that transform culture into a strategic asset — strengthening accountability, accelerating innovation, and aligning workforce behavior with productivity and profitability goals.",
   },
   {
     icon: Globe,
     title: "Lifecycle Approach",
-    description: "",
+    description:
+      "We tailor our consulting and training solutions to an organization's stage of growth, recognizing that startups, scaling enterprises, mature institutions, and transforming organizations face fundamentally different capability and leadership demands.",
   },
 ];
 
