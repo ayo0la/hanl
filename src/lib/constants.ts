@@ -79,7 +79,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const heroContent = {
-  eyebrow: "HORNS TRAINING & CONSULTING",
+  eyebrow: "HONORS TRAINING & CONSULTING",
   headline: "Powering Performance Where Strategy, Culture, and Intelligence Meet",
   subtitle:
     "Premier strategic and capacity-building organization combining decades of strategic  methodologies with cutting edge AI integration, delivering practical implementation focus programs designed for the business landscape",
