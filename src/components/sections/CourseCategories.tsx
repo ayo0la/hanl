@@ -23,7 +23,7 @@ function CategoryContent({ category }: { category: CourseCategory }) {
             {category.description}
           </p>
           <h4 className="text-sm font-bold uppercase tracking-wider text-hanl-700 mb-3">
-            AI-Enhanced Topics
+            Enhanced Topics
           </h4>
           <ul className="space-y-2">
             {category.topics.map((topic, i) => (
@@ -74,8 +74,11 @@ export default function CourseCategories() {
           <SectionHeading
             eyebrow="Our Curriculum"
             title="Comprehensive Course Categories"
-            description="Seven specialized learning tracks, each integrating AI and automation alongside traditional industry expertise."
+            description="Seven specialized learning tracks, each utilizing AI and automation tools."
           />
+          <p className="text-center text-lg font-semibold text-hanl-700 -mt-8 mb-12 lg:-mt-12 lg:mb-16">
+            Explore Our Training
+          </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>

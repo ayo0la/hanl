@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HTC — AI-First Learning Solutions for Nigerian Organizations",
     description:
-      "Empowering organizations for the AI-powered future. 1,500+ courses spanning traditional and emerging technologies.",
+      "Powering performance where strategy, culture, and intelligence meet. 1,500+ courses spanning traditional and emerging technologies.",
     url: "https://www.honorstraining.ng",
     siteName: "Honors Training & Consulting",
     locale: "en_NG",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HTC — AI-First Learning Solutions",
     description:
-      "Empowering organizations for the AI-powered future. 1,500+ courses spanning traditional and emerging technologies.",
+      "Powering performance where strategy, culture, and intelligence meet. 1,500+ courses spanning traditional and emerging technologies.",
   },
 };
 

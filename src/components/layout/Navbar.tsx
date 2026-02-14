@@ -41,12 +41,12 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-5">
             {navLinks.map((link) =>
               link.disabled ? (
                 <span
                   key={link.href}
-                  className="text-sm font-semibold uppercase tracking-wide text-white/30 cursor-not-allowed"
+                  className="text-xs font-semibold uppercase tracking-wide text-white/30 cursor-not-allowed whitespace-nowrap"
                 >
                   {link.label}
                 </span>
@@ -54,7 +54,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-semibold uppercase tracking-wide text-white/80 hover:text-accent-500 transition-colors duration-200"
+                  className="text-xs font-semibold uppercase tracking-wide text-white/80 hover:text-accent-500 transition-colors duration-200 whitespace-nowrap"
                 >
                   {link.label}
                 </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Button href="#contact" variant="primary" size="sm">
               Request a Proposal
             </Button>
@@ -72,7 +72,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-white p-2 cursor-pointer"
+            className="xl:hidden text-white p-2 cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (

@@ -18,7 +18,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="fixed inset-0 z-40 bg-hanl-900 lg:hidden"
+          className="fixed inset-0 z-40 bg-hanl-900 xl:hidden"
         >
           <div className="flex flex-col items-center justify-center h-full gap-8">
             {navLinks.map((link) =>

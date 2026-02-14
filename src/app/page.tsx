@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import ValueProposition from "@/components/sections/ValueProposition";
+import WhatWeDeliver from "@/components/sections/WhatWeDeliver";
 import DeliveryMethods from "@/components/sections/DeliveryMethods";
 import IndustrySectors from "@/components/sections/IndustrySectors";
 import CourseCategories from "@/components/sections/CourseCategories";
@@ -18,6 +19,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ValueProposition />
+        <WhatWeDeliver />
         <DeliveryMethods />
         <IndustrySectors />
         <CourseCategories />

@@ -12,7 +12,7 @@ export default function IndustrySectors() {
         <ScrollReveal>
           <SectionHeading
             eyebrow="Industries We Serve"
-            title="AI-Ready Training Across Key Sectors"
+            title="Strategic Consulting & Training Across Key Sectors"
             description="Tailored learning programs designed for the unique challenges and opportunities within Nigeria's most important industries."
             light
           />

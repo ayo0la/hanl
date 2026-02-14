@@ -21,7 +21,7 @@ export default function Footer() {
                 HTC
               </span>
             </a>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 whitespace-pre-line">
               {siteConfig.tagline}
             </p>
             <div className="flex gap-3">

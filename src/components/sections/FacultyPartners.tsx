@@ -11,7 +11,7 @@ export default function FacultyPartners() {
           <SectionHeading
             eyebrow="Our Expertise"
             title="World-Class Faculty & Strategic Partnerships"
-            description="Our instructors bring decades of hands-on industry experience combined with deep AI and technology expertise."
+            description="Our instructors bring decades of hands-on industry experience combined with AI and technology tools."
           />
         </ScrollReveal>
 

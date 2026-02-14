@@ -1,6 +1,5 @@
 import {
   Brain,
-  Cog,
   Building2,
   Award,
   BookOpen,
@@ -58,7 +57,7 @@ import {
 export const siteConfig = {
   name: "HTC",
   fullName: "Honors Training & Consulting",
-  tagline: "Empowering Organizations for the AI-Powered Future",
+  tagline: "Unlock Productivity.\nStrengthen Profitability.\nTransform Capability.",
   description:
     "Premier learning and capacity-building organization combining 20+ years of training methodologies with cutting-edge AI and automation expertise. 1,500+ courses designed for the Nigerian professional landscape.",
   url: "https://www.honorstraining.ng",
@@ -73,15 +72,17 @@ export const navLinks: NavLink[] = [
   { label: "Learning Solutions", href: "#delivery" },
   { label: "Industry Sectors", href: "#sectors" },
   { label: "Programs", href: "#programs" },
+  { label: "Faculty", href: "/faculty", disabled: true },
+  { label: "Board Profile", href: "/board-profile", disabled: true },
   { label: "Careers", href: "/careers", disabled: true },
   { label: "Contact", href: "#contact" },
 ];
 
 export const heroContent = {
   eyebrow: "AI-FIRST LEARNING SOLUTIONS",
-  headline: "Empowering Organizations for the AI-Powered Future",
+  headline: "Powering Performance Where Strategy, Culture, and Intelligence Meet",
   subtitle:
-    "Premier learning and capacity-building organization combining 20+ years of proven training methodologies with cutting-edge AI and automation expertise. 1,500+ courses designed for the Nigerian professional landscape.",
+    "Premier consulting and capacity-building organization combining 20+ years of proven training methodologies with cutting-edge AI and automation expertise. 1,500+ courses designed for the Nigerian professional landscape.",
   primaryCta: { label: "Explore Programs", href: "#programs" },
   secondaryCta: { label: "Request a Proposal", href: "#contact" },
 };
@@ -89,15 +90,9 @@ export const heroContent = {
 export const valuePropositions: ValueProp[] = [
   {
     icon: Brain,
-    title: "AI-First Approach",
+    title: "Digital Approach",
     description:
       "Every program integrates artificial intelligence from the ground up, not as an afterthought. Your teams learn to work alongside AI from day one.",
-  },
-  {
-    icon: Cog,
-    title: "Automation of Things",
-    description:
-      "Proprietary framework bridging the gap between IoT concepts and real-world automation implementation across Nigerian industries.",
   },
   {
     icon: Building2,
@@ -110,6 +105,16 @@ export const valuePropositions: ValueProp[] = [
     title: "20+ Years of Excellence",
     description:
       "Two decades of training methodology refined with 1,500+ courses and local faculty who understand the Nigerian business context.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Cultural Approach",
+    description: "",
+  },
+  {
+    icon: Globe,
+    title: "Lifecycle Approach",
+    description: "",
   },
 ];
 
@@ -201,7 +206,7 @@ export const industrySectors: Sector[] = [
 export const courseCategories: CourseCategory[] = [
   {
     shortName: "Financial Services",
-    fullTitle: "Financial Services + AI",
+    fullTitle: "Financial Services",
     description:
       "We offer a wide range of technical courses for financial institutions which could be customized to suit your needs. Deployed with highly experienced faculty with local & international exposure in Banking, Pension, Insurance, Capital Markets and their regulators.",
     topics: [
@@ -223,7 +228,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "Energy",
-    fullTitle: "Energy (Oil & Gas, Power) + AI",
+    fullTitle: "Energy (Oil & Gas, Power)",
     description:
       "We offer a wide range of technical courses for Oil and Gas, Mining and Power institutions which could be customized to suit your needs. Deployed with highly experienced faculty with local & international exposure.",
     topics: [
@@ -245,7 +250,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "Critical Skills",
-    fullTitle: "Critical Skills + AI Integration",
+    fullTitle: "Critical Skills",
     description:
       "We offer a diverse range of on-demand customizable critical skills courses, all essential in helping your executives navigate today's constantly evolving professional and business landscape. Our learning solutions ensure optimum internalization and excellent post-learning impact.",
     topics: [
@@ -267,7 +272,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "Government",
-    fullTitle: "Federal & State Government + AI",
+    fullTitle: "Federal & State Government",
     description:
       "Having recognized the importance of human capital development as an accelerator for state economic growth, a comprehensive range of learning solutions have been designed for all levels of government employees towards creating a more effective and efficient public sector workforce.",
     topics: [
@@ -289,7 +294,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "Manufacturing",
-    fullTitle: "Export, Manufacturing & Agriculture + AI",
+    fullTitle: "Export, Manufacturing & Agriculture",
     description:
       "We offer a broad range of technical courses on Exports, Manufacturing and Agriculture. Courses are designed to provide your institution with the skills and expertise needed to gain competitive edge in today's complex world of exports, production and agriculture.",
     topics: [
@@ -311,7 +316,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "IT & Telecom",
-    fullTitle: "IT & Telecommunications + AI",
+    fullTitle: "IT & Telecommunications",
     description:
       "We offer industry-leading IT and Telecommunication training courses, delivered with highly competent tech-driven local and international faculties. Our courses are fully designed to meet our client's specific needs, ultimately helping them achieve overall business goals.",
     topics: [
@@ -333,7 +338,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "Board & C-Suite",
-    fullTitle: "Board Education & C-Suite + AI Governance",
+    fullTitle: "Board Education & C-Suite Governance",
     description:
       "Executive programs designed for board members and C-suite leaders to understand, oversee, and strategically leverage AI for organizational transformation.",
     topics: [
@@ -355,7 +360,7 @@ export const courseCategories: CourseCategory[] = [
   },
   {
     shortName: "Education",
-    fullTitle: "Education & Research + AI",
+    fullTitle: "Education & Research",
     description:
       "Comprehensive learning solutions for universities, polytechnics, and educational institutions. Our programs empower educators, administrators, and researchers with modern pedagogical approaches, institutional management skills, and AI-powered educational technologies.",
     topics: [
@@ -524,9 +529,9 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const ctaContent = {
-  headline: "Ready to Transform Your Organization?",
+  headline: "Partner With Us to Build a Future-Ready Organization",
   subtitle:
-    "Take the first step towards an AI-powered future. Our team is ready to design a customized learning program for your organization.",
+    "Whether you are strengthening institutional capacity, scaling into new markets, modernizing operations, or preparing your workforce for AI-driven transformation, we provide the insight, training, and strategic guidance required to succeed.",
   trustLine: "Join 500+ organizations already building AI-ready teams",
 };
 
